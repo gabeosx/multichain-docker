@@ -16,17 +16,13 @@ Runs the [MultiChain Explorer](https://github.com/MultiChain/multichain-explorer
 
 ### Scripts
 
-There are several Bash scripts that help build the environment:
+There are two Bash scripts that help build the environment:
 
-* `build.sh` - Executes `clean.sh` and builds the Docker containers
-* `clean.sh` - Kills all containers, removes all terminated Docker containers, and any hanging volumes 
 * `multichain-explore/launchExplorer.sh` - Creates a new chain and configures it based on environment variables provided in the yml script
 * `multichain-explore/launchExplorer.sh` - Creates an instance of MultiChain, joins it to the master, and configures / launches the MultiChain Explorer.
 
 
 ### Running
-
-If you want to clean your Docker environment, run the build.sh process. Otherwise, use the standard docker-compose command:
 
 ```sh
 $ docker-compose up -d
