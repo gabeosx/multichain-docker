@@ -1,0 +1,31 @@
+master:
+  build: ./multichain
+  ports:
+    - "8080:8080"
+    - "1080:1080"
+  environment:
+    RPCUSER: rpcuser
+    RPCPASSWORD: rpcpassword
+    PEER_PORT: 8080
+    RPC_PORT: 1080
+    ANYONE_CAN_CONNECT: "true"
+    ANYONE_CAN_SEND: "true"
+    ANYONE_CAN_RECEIVE: "true"
+    ANYONE_CAN_CREATE: "true"
+    ANYONE_CAN_ISSUE: "true"
+    ANYONE_CAN_MINE: "true"
+    ANYONE_CAN_ACTIVATE: "true"
+    ANYONE_CAN_ADMIN: "true"
+  tty: true
+slave:
+  build: ./multichain-slave
+  links:
+    - master
+  tty: true
+explore:
+  build: ./multichain-explore
+  links:
+    - master
+  tty: true
+  ports:
+    - "2750:2750"
