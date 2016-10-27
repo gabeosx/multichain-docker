@@ -8,6 +8,7 @@ master:
     RPCPASSWORD: rpcpassword
     PEER_PORT: 8080
     RPC_PORT: 1080
+    RPC_NETMASK: "0.0.0.0/0"
     ANYONE_CAN_CONNECT: "true"
     ANYONE_CAN_SEND: "true"
     ANYONE_CAN_RECEIVE: "true"
